@@ -1,4 +1,5 @@
 <template>
+  <Html class="dark:bg-neutral-950"/>
   <div>
     <NuxtRouteAnnouncer />
     <NuxtLoadingIndicator/>
@@ -7,6 +8,9 @@
     </NuxtLayout>
   </div>
 </template>
+<script setup lang="ts">
+
+</script>
 <style>
 @media (min-width: 400px) and (prefers-reduced-motion: no-preference) {
   .page-enter-active,

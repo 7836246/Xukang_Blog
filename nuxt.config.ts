@@ -6,10 +6,19 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/devtools",
     '@nuxtjs/google-fonts',
+    '@unocss/nuxt',
+    '@nuxt/content',
+    'arco-design-nuxt-module',
   ],
   app: {
     pageTransition: {name: 'page', mode: 'out-in'},
     layoutTransition: {name: 'layout', mode: 'out-in'},
+  },
+  arco: {
+    importPrefix: 'A',
+    hookPrefix: 'Arco',
+    locales: ['getLocale'],
+    localePrefix: 'Arco',
   },
   googleFonts: {
     families: {

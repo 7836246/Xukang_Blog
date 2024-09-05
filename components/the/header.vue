@@ -3,8 +3,7 @@
 </script>
 
 <template>
-  <TheHeader/>
-  <slot/>
+  header
 </template>
 
 <style scoped>
