@@ -3,7 +3,8 @@
 <template>
   <main>
     <div class="flex flex-col flex-nowrap gap-10">
-      <!--      <Hero />-->
+      <Hero />
+      <Technology />
     </div>
   </main>
 </template>

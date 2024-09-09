@@ -15,7 +15,10 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "nuxt-typed-router",
     "@nuxtjs/mdc",
-    "@nuxt/ui",
+    "@nuxtjs/color-mode",
+    "nuxt-icon",
+    "@nuxtjs/fontaine",
+    "@nuxtjs/robots",
   ],
   // 应用配置
   app: {},
@@ -27,6 +30,12 @@ export default defineNuxtConfig({
   sourcemap: {
     server: false,
     client: true,
+  },
+  // 颜色模式配置
+  colorMode: {
+    classSuffix: "",
+    preference: "dark",
+    fallback: "light",
   },
   // MDC 配置
   mdc: {

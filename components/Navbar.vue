@@ -1,106 +1,101 @@
 <template>
   <div
-    class="sticky top-0 z-10 border-b bg-white px-6 py-2 shadow-md dark:backdrop-blur-lg dark:border-neutral-800 dark:bg-neutral-950/80 dark:text-white"
+    class="sticky top-0 z-10 border-b bg-white px-6 py-2 shadow-md dark:bg-neutral-950/80 dark:border-neutral-800 dark:backdrop-blur-lg dark:text-white"
   >
     <header
-      class="flex items-center justify-between xs:justify-between sm:justify-between max-w-[1300px] mx-auto"
+      class="flex items-center justify-between max-w-full lg:max-w-1300px mx-auto px-4 overflow-hidden"
     >
-      <!-- Logo 链接 -->
-      <ALink
-        id="myName"
-        aria-label="logo"
-        class="inline-flex items-center gap-2 text-xl font-extrabold"
-        href="/"
+      <NuxtLink
+        aria-label="主页"
+        class="transition-colors duration-200 inline-flex items-center gap-2 text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white no-underline hover:no-underline"
+        to="/"
       >
-        <a-icon icon="home" size="24" />
-        <span>个人博客</span>
-      </ALink>
-
-      <!-- 导航 -->
-      <nav class="flex gap-5">
+        徐康的个人主页
+      </NuxtLink>
+      <!-- 使用 gap-5 确保间距一致 -->
+      <nav class="flex gap-5 items-center">
         <div
           v-for="data in navItems"
           :key="data.label"
-          class="hidden self-center md:inline-flex"
+          class="flex items-center"
         >
-          <ATooltip content="data.label" placement="top">
-            <ALink
-              :aria-label="`前往 ${data.label} 页面`"
-              :href="data.to"
-              class="inline-flex text-gray-600 transition duration-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
+          <a-tooltip :arrow="true" :content="data.label">
+            <NuxtLink
+              :aria-label="`前往${data.label}页面`"
+              :to="data.to"
+              active-class="active-link"
+              class="inline-flex items-center text-gray-600 hover:text-blue-600 dark:text-gray-100 dark:hover:text-blue-400 transition-colors duration-200"
             >
-              <AIcon :icon="data.icon" class="active:scale-90" size="24px" />
-            </ALink>
-          </ATooltip>
+              <component :is="data.icon" class="icon-size fixed-icon" />
+            </NuxtLink>
+          </a-tooltip>
         </div>
-        <ADivider class="hidden md:block" direction="vertical" />
-        <!--        <navbar-theme-switch />-->
-        <AButton
-          aria-label="打开侧边栏"
-          class="inline-flex md:hidden"
-          icon="icon-menu"
-          type="text"
-          @click="isSidebarOpen = true"
-        />
-        <ADrawer v-model:visible="isSidebarOpen" title="导航菜单" width="300px">
-          <div class="flex flex-col gap-3 p-4">
-            <div class="flex flex-row justify-between items-center">
-              <ALink
-                id="myName"
-                aria-label="logo"
-                class="text-2xl font-extrabold inline-flex gap-1 items-center"
-                href="/"
-              >
-                <AIcon icon="home" size="24" />
-                <span>个人博客</span>
-              </ALink>
-              <AButton
-                icon="close"
-                shape="circle"
-                @click="isSidebarOpen = false"
-              />
-            </div>
-            <ADivider />
-            <AMenu :items="navItems" @click="isSidebarOpen = false" />
-          </div>
-        </ADrawer>
+        <div class="flex items-center">
+          <NavbarThemeSwitch />
+        </div>
       </nav>
     </header>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
+// 导入 Lucide 图标
+import {
+  LucideBookmark,
+  LucideBookOpen,
+  LucideFileText,
+  LucideFolderOpen,
+  LucideHome,
+} from "lucide-vue-next";
+
 const isSidebarOpen = ref(false);
 const navItems = [
   {
     label: "主页",
     to: "/",
-    icon: "icon-home",
+    icon: LucideHome,
   },
   {
     label: "项目",
-    to: "/Projects",
-    icon: "icon-folder",
-  },
-  {
-    label: "我的背包里有什么？",
-    to: "/WhatIsInMyBag",
-    icon: "icon-backpack",
+    to: "/projects",
+    icon: LucideFolderOpen,
   },
   {
     label: "书签",
-    to: "/Bookmarks",
-    icon: "icon-bookmark",
+    to: "/bookmarks",
+    icon: LucideBookmark,
   },
   {
     label: "简历",
-    to: "/Resume",
-    icon: "icon-resume",
+    to: "/resume",
+    icon: LucideFileText,
   },
   {
     label: "博客",
-    to: "/blog",
-    icon: "icon-notebook",
+    to: "/blogs",
+    icon: LucideBookOpen,
   },
 ];
 </script>
+
+<style scoped>
+/* 固定图标的大小 */
+.icon-size {
+  width: 24px;
+  height: 24px;
+}
+
+/* 防止图标在加载时闪烁 */
+.fixed-icon {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* 选中状态的高亮样式 */
+.active-link .icon-size {
+  color: #0883ee;
+  font-weight: bold;
+}
+</style>

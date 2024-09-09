@@ -15,17 +15,16 @@
     </div>
 
     <!-- 导航栏 -->
-    <!--    <Navbar />-->
+    <Navbar />
 
     <!-- 主容器 -->
     <div class="max-w-[1000px] mx-auto p-0 sm:p-3 flex flex-col gap-2 sm:gap-5">
       <!-- 主体内容 -->
       <main
-        class="rounded-none border bg-white p-3 shadow-md xs:p-5 sm:rounded-lg md:p-5 lg:p-8 dark:border-neutral-800 dark:bg-neutral-950 dark:shadow-none"
+        class="rounded-none border bg-white shadow-md p-5 pt-0 sm:rounded-lg dark:border-neutral-800 dark:bg-neutral-950 dark:shadow-none"
       >
         <slot />
       </main>
-
       <!-- 页脚 -->
       <TheFooter />
     </div>
