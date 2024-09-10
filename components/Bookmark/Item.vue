@@ -1,6 +1,11 @@
 <template>
   <!-- 外层链接，打开新标签 -->
-  <a :href="webItem.url" rel="noopener noreferrer" target="_blank">
+  <NuxtLink
+    :to="webItem.url"
+    class="no-underline"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
     <!-- Arco UI 的卡片组件 -->
     <a-card
       class="transition-transform hover:scale-102 p-0 border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900"
@@ -14,7 +19,8 @@
           <span
             class="relative hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-md text-gray-800 sm:inline-flex dark:text-gray-400"
           >
-            <!--            <icon class="text-2xl" name="ph:globe-duotone" />-->
+            <!-- 图标替换为你需要的图标 -->
+            <!-- <icon class="text-2xl" name="ph:globe-duotone" /> -->
           </span>
         </template>
         <!-- 名称和描述部分 -->
@@ -30,13 +36,11 @@
         </template>
       </a-card-meta>
       <!-- 域名显示部分 -->
-      <div
-        class="text-sm text-gray-800 sm:block dark:text-gray-400 mt-2 text-right"
-      >
+      <div class="text-sm text-gray-800 dark:text-gray-400 mt-2 text-right">
         {{ useGetHostname(webItem.url) }}
       </div>
     </a-card>
-  </a>
+  </NuxtLink>
 </template>
 
 <script lang="ts" setup>

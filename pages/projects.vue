@@ -29,33 +29,15 @@
 import type workListInterface from "~/types/workListInterface";
 
 // 项目列表数据
-const workList: workListInterface[] = [
-  {
-    name: "Ionic + Angular - Firebase CRUD ",
-    description: "Ionic 项目，作为云应用开发课程的作业。",
-    link: "https://github.com/bKoZii/cloud-konkamon-ionic-angular",
-  },
-  {
-    name: "Ionic + Vue - Firebase CRUD",
-    description: "Ionic 项目，作为云应用开发课程的作业。",
-    link: "https://github.com/bKoZii/cloud-konkamon-ionic-vue",
-  },
-  {
-    name: "从 Mock Up 创建的仪表板",
-    description: "练习使用 Vue 和 Quasar 从设计稿中创建仪表板。",
-  },
-  {
-    name: "Angular 网站",
-    description: "Angular + Bootstrap 项目，作为云应用开发课程的作业。",
-    link: "https://github.com/bKoZii/cloud-konkamon-bootstrap",
-  },
-  {
-    name: "Vue + Vuetify - Firestore CRUD",
-    description: "学习使用 Vuetify 创建 CRUD 应用程序。",
-    link: "https://github.com/bKoZii/vuetify-firestore-crud",
-  },
-];
-
+const {
+  data: workList,
+  status,
+  error,
+  refresh,
+  clear,
+} = (await useAsyncData("project", () =>
+  $fetch("/api/project"),
+)) as unknown as workListInterface[];
 // 使用 useSeoMeta 设置 SEO 元信息
 useSeoMeta({
   title: "项目合集",

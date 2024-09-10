@@ -19,6 +19,7 @@
     "@nuxtjs/robots": "^4.1.6",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@pinia/nuxt": "^0.5.4",
+    "@unocss/preset-typography": "^0.62.3",
     "lucide-vue-next": "^0.439.0",
     "nuxt": "^3.13.1",
     "nuxt-icon": "1.0.0-beta.7",
@@ -29,6 +30,8 @@
   "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf",
   "devDependencies": {
     "@arco-design/web-vue": "^2.56.1",
+    "@iconify-json/mdi": "^1.2.0",
+    "@nuxt/icon": "^1.5.1",
     "@nuxtjs/color-mode": "^3.4.4",
     "@unocss/nuxt": "^0.62.3",
     "arco-design-nuxt-module": "^0.1.0",

@@ -2,55 +2,77 @@ import {
   defineConfig,
   presetAttributify,
   presetIcons,
+  presetTypography,
   presetUno,
 } from "unocss";
 
-// 使用 defineConfig 定义 UnoCSS 配置
 export default defineConfig({
-  // 包含 UnoCSS 的预设
-  presets: [presetUno(), presetAttributify(), presetIcons()],
-  // 自定义主题
-  theme: {
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      "ocean-green": {
-        DEFAULT: "#379777",
-        50: "#C8EBE0",
-        100: "#B6E4D5",
-        200: "#90D7BF",
-        300: "#6BC9AA",
-        400: "#46BB94",
-        500: "#379777",
-        600: "#2C795F",
-        700: "#215B48",
-        800: "#163D30",
-        900: "#0B1F19",
-        950: "#06100D",
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons(),
+    presetTypography({
+      cssExtend: {
+        a: {
+          "text-decoration": "none",
+          color: "#1e88e5",
+        },
+        "a:hover": {
+          "text-decoration": "underline",
+        },
+        pre: {
+          "background-color": "#2e3440", // 更深的背景色
+          "border-radius": "8px",
+          padding: "1.2rem",
+          "overflow-x": "auto",
+          "box-shadow": "0 4px 8px rgba(0, 0, 0, 0.1)",
+          position: "relative", // 为了放置语言标签
+          "margin-bottom": "1.5rem",
+        },
+        "pre code": {
+          display: "block",
+          background: "none",
+          padding: "0",
+          color: "#f8f8f2",
+          "font-family": '"Fira Code", monospace',
+          "font-size": "0.875rem",
+        },
+        ".dark pre": {
+          "background-color": "#282c34",
+        },
+        ".dark pre code": {
+          color: "#abb2bf",
+        },
+        ".code-copy-btn": {
+          position: "absolute",
+          top: "8px",
+          right: "8px",
+          "background-color": "#44475a",
+          border: "none",
+          color: "#f8f8f2",
+          padding: "4px 8px",
+          "border-radius": "4px",
+          cursor: "pointer",
+          "font-size": "0.75rem",
+          opacity: "0.7",
+        },
+        ".code-copy-btn:hover": {
+          opacity: "1",
+        },
+        // 语言标识的样式
+        "pre::before": {
+          content: "attr(data-language)", // 使用 data-language 属性显示语言
+          position: "absolute",
+          top: "8px",
+          left: "16px",
+          "background-color": "#44475a",
+          color: "#f8f8f2",
+          "font-size": "0.75rem",
+          padding: "2px 8px",
+          "border-radius": "4px",
+          "text-transform": "uppercase", // 转为大写
+        },
       },
-      secondary: {
-        DEFAULT: "#344C64",
-        light: "#577B8D",
-      },
-    },
-    breakpoints: {
-      xs: "400px",
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
-    },
-    fontFamily: {
-      sans: ["Space Grotesk", "Noto Sans Thai Looped", "system-ui"],
-      mono: ["Fira Code", "Noto Sans Thai Looped"],
-    },
-  },
-  // 自定义规则和实用类
-  rules: [
-    // 在这里添加自定义规则
-  ],
-  shortcuts: [
-    // 在这里定义快捷方式
+    }),
   ],
 });

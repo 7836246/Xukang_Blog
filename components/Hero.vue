@@ -48,7 +48,7 @@ const downloadCV = () => {
   setTimeout(() => {
     loading.value = false;
     const link = document.createElement("a");
-    link.href = "path-to-your-cv-file.pdf"; // 替换为实际的简历文件路径
+    link.href = "/后端工程师_徐康_.pdf"; // 替换为实际的简历文件路径
     link.download = "Xu_Kang_CV.pdf";
     link.click();
   }, 2000);
