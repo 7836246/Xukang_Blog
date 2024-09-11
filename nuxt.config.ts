@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   // 兼容性
   compatibilityDate: "2024-04-03",
+  // 开发配置
+  devServer: {
+    host: "0.0.0.0",
+  },
   // 开发工具
   devtools: { enabled: true },
   // 第三方模块
