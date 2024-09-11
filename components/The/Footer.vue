@@ -40,6 +40,7 @@ import { Github } from "lucide-vue-next";
       </a-tooltip>
     </div>
   </footer>
+  <a-back-top />
 </template>
 
 <style scoped>

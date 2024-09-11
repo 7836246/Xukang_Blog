@@ -2,19 +2,19 @@
   <div>
     <a-card
       :bordered="false"
-      class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-white to-gray-100 dark:from-gray-800 dark:to-gray-900"
+      class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 card-bg"
     >
       <template #title>
         <!-- 链接的项目标题 -->
-        <a
+        <NuxtLink
           v-if="workData.link"
           :href="workData.link"
-          class="text-lg font-bold flex items-center gap-2 no-underline hover:text-blue-500 transition-colors duration-300"
+          class="text-lg font-bold flex items-center gap-2 no-underline hover:text-blue-500 transition-colors duration-300 dark:text-white"
           rel="noopener noreferrer"
           target="_blank"
         >
           {{ workData.name }}
-        </a>
+        </NuxtLink>
         <!-- 非链接的项目标题 -->
         <p v-else class="text-lg font-bold m-0 text-gray-800 dark:text-white">
           {{ workData.name }}
@@ -43,11 +43,23 @@ defineProps<{
 
 <style scoped>
 /* 卡片样式 */
-a-card {
-  border-radius: 12px;
+.card-bg {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f7f7f7
+  ); /* 浅色模式的卡片渐变背景色 */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #ffffff, #f7f7f7); /* 卡片渐变背景色 */
   transition: all 0.3s ease;
+}
+
+.dark .card-bg {
+  background: linear-gradient(
+    135deg,
+    #2a2a2a,
+    #1f1f1f
+  ) !important; /* 深色模式的卡片渐变背景色 */
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05); /* 深色模式下更轻的阴影 */
 }
 
 /* 链接样式 */
@@ -61,11 +73,21 @@ a:hover {
   color: #3498db; /* 鼠标移入时链接变成蓝色 */
 }
 
+.dark a:hover {
+  color: #58a6ff; /* 夜间模式下鼠标移入时的链接颜色 */
+}
+
 /* 鼠标悬停效果 */
-a-card:hover {
+.card-bg:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 加深阴影 */
   transform: translateY(-5px); /* 卡片上移效果 */
   transition: all 0.3s ease; /* 过渡效果 */
+}
+
+.dark .card-bg:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1); /* 深色模式下的悬停阴影 */
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
 
 /* 描述文本，限制为两行 */

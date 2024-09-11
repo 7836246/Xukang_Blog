@@ -24,7 +24,6 @@ const formattedData = computed(() => {
         path: article._path,
         title: article.title || "无标题",
         description: article.description || "无描述",
-        alt: article.alt || "/not-found.jpg",
         date: article.date ? formatDate(article.date) : "无日期", // 使用格式化的日期
         tags: article.tags || [],
         published: article.published || false,
@@ -82,7 +81,7 @@ useSeoMeta({
     <div class="px-6 mb-6">
       <AInput
         v-model="searchTest"
-        class="block w-full bg-gray-100 dark:bg-slate-800 dark:placeholder-gray-400 text-gray-800 dark:text-gray-200 rounded-md border-none shadow-sm focus:(border-indigo-500 ring-2 ring-indigo-200)"
+        class="block w-full bg-gray-100 dark:bg-slate-800 dark:placeholder-gray-400 text-gray-800 dark:text-gray-200 rounded-md border-none shadow-sm focus:(border-indigo-500 ring-2 ring-indigo-200 dark:ring-indigo-500)"
         clearable
         placeholder="Search"
         size="large"
@@ -95,12 +94,19 @@ useSeoMeta({
       <template v-for="post in paginatedData" :key="post.title">
         <NuxtLink :to="post.path" class="no-underline">
           <a-card
-            class="transition-all duration-300 transform hover:scale-105 shadow-md"
+            :title="post.title"
+            class="transition-all duration-300 transform hover:scale-105 shadow-md text-gray-800 dark:text-gray-200 dark:bg-gray-800 dark:border-gray-700"
             hoverable
           >
+            <!-- 确保标题在夜间模式下显示清晰 -->
+            <template #title>
+              <span class="text-lg font-bold text-gray-800 dark:text-white">
+                {{ post.title }}
+              </span>
+            </template>
+
             <a-card-meta
               :description="post.description"
-              :title="post.title"
               class="text-gray-800 dark:text-gray-200"
             />
             <div class="flex justify-between items-center mt-4">
@@ -118,7 +124,7 @@ useSeoMeta({
       <!-- 没有文章时显示的卡片 -->
       <a-card
         v-if="paginatedData.length <= 0"
-        class="text-center py-16 text-gray-500"
+        class="text-center py-16 text-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700"
         hoverable
       >
         <p class="text-lg">No Post Found</p>
@@ -137,3 +143,44 @@ useSeoMeta({
     </div>
   </main>
 </template>
+
+<style scoped>
+/* 优化卡片背景和边框 */
+a-card {
+  background-color: white;
+  border-color: #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark a-card {
+  background-color: #2d3748 !important; /* 深色模式下的卡片背景 */
+  border-color: #4a5568 !important; /* 深色模式下的卡片边框 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* 链接样式 */
+a {
+  text-decoration: none; /* 去掉下划线 */
+  transition: color 0.3s ease; /* 平滑过渡 */
+}
+
+a:hover {
+  color: #3498db; /* 鼠标移入时链接变成蓝色 */
+}
+
+.dark a:hover {
+  color: #58a6ff; /* 夜间模式下鼠标移入时的链接颜色 */
+}
+
+/* 按钮样式 */
+a-button {
+  border: none;
+  background-color: transparent;
+  color: #3498db;
+}
+
+.dark a-button {
+  color: #58a6ff; /* 夜间模式下的按钮颜色 */
+}
+</style>

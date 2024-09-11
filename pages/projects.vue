@@ -17,6 +17,7 @@
             :md="12"
             :span="24"
           >
+            <!-- 确保 ProjectListItem 组件在夜间模式下也有适配 -->
             <ProjectListItem :work-data="work" />
           </a-col>
         </a-row>
@@ -38,6 +39,7 @@ const {
 } = (await useAsyncData("project", () =>
   $fetch("/api/project"),
 )) as unknown as workListInterface[];
+
 // 使用 useSeoMeta 设置 SEO 元信息
 useSeoMeta({
   title: "项目合集 - 徐康的个人主页",
@@ -48,7 +50,7 @@ useSeoMeta({
 </script>
 
 <style scoped>
-/* 自定义项目标题区域的上边距 */
+/* 项目标题区域的上边距 */
 .project-header {
   margin-top: 0; /* 将上边距设置为0，减少顶部空白 */
 }
