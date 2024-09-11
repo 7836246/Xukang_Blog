@@ -13,6 +13,7 @@ useSeoMeta({
     <div class="flex flex-col flex-nowrap gap-10">
       <Hero />
       <Technology />
+      <SocialLinks />
     </div>
   </main>
 </template>

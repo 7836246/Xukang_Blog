@@ -17,8 +17,17 @@
 
 <script lang="ts" setup>
 // 定义一个响应式变量来存储书签数据
-const { data: bookmarkItems } = await useFetch("/api/bookmarks");
+import type workListInterface from "~/types/workListInterface";
 
+const {
+  data: bookmarkItems,
+  status,
+  error,
+  refresh,
+  clear,
+} = (await useAsyncData("bookmarks", () =>
+  $fetch("/api/bookmarks"),
+)) as unknown as workListInterface[];
 // 设置 SEO 元数据
 useSeoMeta({
   title: "书签 - 徐康的个人主页",
