@@ -93,11 +93,8 @@ definePageMeta({
 });
 
 useSeoMeta({
-  title: "简历 - 徐康",
-  ogTitle: "徐康的个人简历",
-  description: "徐康的个人简历",
-  ogDescription: "徐康的个人简历",
-  ogImage: "/ogImage-resume.webp",
-  ogUrl: "https://www.xukangr.com/resume",
+  title: "简历 - 徐康的个人主页",
+  keywords: "简历, 徐康, 个人主页",
+  description: "徐康的个人简历，包含专业技能、工作经验和项目经验等详细信息",
 });
 </script>

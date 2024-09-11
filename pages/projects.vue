@@ -40,14 +40,10 @@ const {
 )) as unknown as workListInterface[];
 // 使用 useSeoMeta 设置 SEO 元信息
 useSeoMeta({
-  title: "项目合集",
-  ogTitle: "%s - 徐康",
+  title: "项目合集 - 徐康的个人主页",
+  keywords: "项目,作品",
   description:
     "以下是我一些小项目和作品。这里列出的只是一些我觉得可以展示的项目。",
-  ogDescription:
-    "以下是我一些小项目和作品。这里列出的只是一些我觉得可以展示的项目。",
-  ogImage: "/ogImage-projects.webp",
-  ogUrl: "https://konkamon.vercel.app/Projects",
 });
 </script>
 

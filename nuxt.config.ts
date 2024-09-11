@@ -25,9 +25,25 @@ export default defineNuxtConfig({
     "@nuxtjs/mdc",
     "@nuxt/icon",
     "@nuxt/image",
+    "nuxt-schema-org",
+    "@nuxtjs/sitemap",
   ],
   // 应用配置
-  app: {},
+  app: {
+    head: {
+      charset: "utf-8",
+      meta: [
+        {
+          name: "viewport",
+          content:
+            "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+        },
+        { name: "theme-color", content: "#fff" },
+      ],
+      link: [{ rel: "manifest", href: "/manifest.json" }],
+      script: [],
+    },
+  },
   // TypeScript 配置
   typescript: {
     strict: true,
@@ -42,6 +58,25 @@ export default defineNuxtConfig({
     classSuffix: "",
     preference: "dark",
     fallback: "light",
+  },
+  // 站点配置 Seo
+  site: {
+    url: "https://www.xukangr.com",
+    name: "徐康的个人主页",
+    trailingSlash: true,
+  },
+  // 地图配置
+  sitemap: {
+    defaultSitemapsChunkSize: 5000,
+    sitemaps: true,
+    xsl: false,
+    // excludeAppSources: false,
+    // sources: ["/api/__sitemap__/urls"],
+    autoI18n: false,
+    // autoLastmod: true,
+    // experimentalWarmUp: true,
+    // experimentalCompression: true,
+    // cacheMaxAgeSeconds: 86400,
   },
   // MDC 配置
   mdc: {

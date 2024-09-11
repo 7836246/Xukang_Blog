@@ -62,6 +62,14 @@ const totalPage = computed(() => {
   const ttlContent = searchData.value.length || 0;
   return Math.ceil(ttlContent / elementPerPage.value);
 });
+
+// 设置 SEO 元数据
+useSeoMeta({
+  title: "博客 - 徐康的个人主页",
+  keywords: "blogs, 博客, 文章, 文章列表",
+  description:
+    "欢迎来到徐康的个人博客，在这里您可以阅读和探索徐康撰写的各类技术文章、项目经验分享以及最新动态。",
+});
 </script>
 
 <template>

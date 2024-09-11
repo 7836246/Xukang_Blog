@@ -21,11 +21,8 @@ const { data: bookmarkItems } = await useFetch("/api/bookmarks");
 
 // 设置 SEO 元数据
 useSeoMeta({
-  title: "书签",
-  ogTitle: "%s - 徐康",
+  title: "书签 - 徐康的个人主页",
+  keywords: "书签,bookmark",
   description: "收集了有关 IT、Linux、教程和其他有趣网站的链接。",
-  ogDescription: "收集了有关 IT、Linux、教程和其他有趣网站的链接。",
-  ogImage: "/ogImage-bookmarks.webp",
-  ogUrl: "https://konkamon.vercel.app/Bookmarks",
 });
 </script>
