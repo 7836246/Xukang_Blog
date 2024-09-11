@@ -55,9 +55,9 @@ export default defineNuxtConfig({
   },
   // 颜色模式配置
   colorMode: {
-    classSuffix: "",
-    preference: "dark",
-    fallback: "light",
+    classSuffix: "", // 保持类名后缀为空
+    preference: "light", // 默认使用浅色模式
+    fallback: "light", // 如果用户偏好未定义，则回退到浅色模式
   },
   // 站点配置 Seo
   site: {
