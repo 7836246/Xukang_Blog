@@ -1,0 +1,25 @@
+{
+  "name": "徐康的个人博客",
+  "short_name": "徐康博客",
+  "description": "欢迎来到徐康的个人博客，这里分享了技术文章、项目经验和最新动态。",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/",
+  "prefer_related_applications": false
+}
