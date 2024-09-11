@@ -10,20 +10,24 @@ const searchTest = ref("");
 
 // 格式化日期的函数
 const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString();
+  return new Date(date).toLocaleDateString("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
 };
 
 const formattedData = computed(() => {
   return (
-    data.value?.map((articles) => {
+    data.value?.map((article) => {
       return {
-        path: articles._path,
-        title: articles.title || "no-title available",
-        description: articles.description || "no-description available",
-        alt: articles.alt || "/not-found.jpg",
-        date: articles.date ? formatDate(articles.date) : "not-date-available", // 使用格式化的日期
-        tags: articles.tags || [],
-        published: articles.published || false,
+        path: article._path,
+        title: article.title || "无标题",
+        description: article.description || "无描述",
+        alt: article.alt || "/not-found.jpg",
+        date: article.date ? formatDate(article.date) : "无日期", // 使用格式化的日期
+        tags: article.tags || [],
+        published: article.published || false,
       };
     }) || []
   );

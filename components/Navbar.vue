@@ -7,13 +7,23 @@
     >
       <NuxtLink
         aria-label="主页"
-        class="transition-colors duration-200 inline-flex items-center gap-2 text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white no-underline hover:no-underline"
+        class="transition-colors duration-200 inline-flex items-center gap-2 text-2xl font-bold text-gray-800 hover:text-blue-500 dark:text-white no-underline"
         to="/"
       >
         徐康的个人主页
       </NuxtLink>
-      <!-- 使用 gap-5 确保间距一致 -->
-      <nav class="flex gap-5 items-center">
+
+      <!-- 移动端汉堡菜单按钮 -->
+      <button
+        aria-label="打开菜单"
+        class="lg:hidden text-gray-800 dark:text-white focus:outline-none"
+        @click="isSidebarOpen = !isSidebarOpen"
+      >
+        <LucideMenu class="icon-size" />
+      </button>
+
+      <!-- 使用 lg:flex 来在大屏幕显示，hidden 在小屏幕隐藏 -->
+      <nav class="hidden lg:flex gap-5 items-center">
         <div
           v-for="data in navItems"
           :key="data.label"
@@ -24,7 +34,7 @@
               :aria-label="`前往${data.label}页面`"
               :to="data.to"
               active-class="active-link"
-              class="inline-flex items-center text-gray-600 hover:text-blue-600 dark:text-gray-100 dark:hover:text-blue-400 transition-colors duration-200"
+              class="inline-flex items-center text-gray-600 hover:text-blue-600 dark:text-gray-100 dark:hover:text-blue-400 transition-colors duration-200 no-underline"
             >
               <component :is="data.icon" class="icon-size fixed-icon" />
             </NuxtLink>
@@ -35,19 +45,52 @@
         </div>
       </nav>
     </header>
+
+    <!-- 移动端侧边栏导航 -->
+    <a-drawer
+      v-model:visible="isSidebarOpen"
+      class="lg:hidden"
+      placement="right"
+      width="250px"
+    >
+      <template #title>
+        <span>导航</span>
+      </template>
+      <template #default>
+        <nav class="flex flex-col gap-4 mt-4">
+          <div
+            v-for="data in navItems"
+            :key="data.label"
+            class="flex items-center"
+          >
+            <NuxtLink
+              :aria-label="`前往${data.label}页面`"
+              :to="data.to"
+              active-class="active-link"
+              class="inline-flex items-center text-gray-600 hover:text-blue-600 dark:text-gray-100 dark:hover:text-blue-400 transition-colors duration-200 no-underline"
+              @click="isSidebarOpen = false"
+            >
+              <component :is="data.icon" class="icon-size fixed-icon mr-2" />
+              <span>{{ data.label }}</span>
+            </NuxtLink>
+          </div>
+        </nav>
+      </template>
+    </a-drawer>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-// 导入 Lucide 图标
+// 导入需要的图标
 import {
   LucideBookmark,
   LucideBookOpen,
   LucideFileText,
   LucideFolderOpen,
   LucideHome,
+  LucideMenu,
 } from "lucide-vue-next";
+import { ref } from "vue";
 
 const isSidebarOpen = ref(false);
 const navItems = [
@@ -97,5 +140,14 @@ const navItems = [
 .active-link .icon-size {
   color: #0883ee;
   font-weight: bold;
+}
+
+/* 美化链接和悬停效果 */
+a.no-underline {
+  text-decoration: none; /* 移除下划线 */
+}
+
+a.no-underline:hover {
+  text-decoration: none; /* 保持无下划线状态 */
 }
 </style>
