@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "nuxt-typed-router",
     "@nuxtjs/color-mode",
-    "@nuxt/icon",
     "@nuxtjs/fontaine",
     "@nuxtjs/robots",
     "@nuxtjs/mdc",
