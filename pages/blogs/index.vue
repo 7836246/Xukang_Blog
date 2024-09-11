@@ -93,7 +93,7 @@ useSeoMeta({
     <!-- 文章卡片列表 -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 px-4">
       <template v-for="post in paginatedData" :key="post.title">
-        <a :href="post.path" class="no-underline">
+        <NuxtLink :to="post.path" class="no-underline">
           <a-card
             class="transition-all duration-300 transform hover:scale-105 shadow-md"
             hoverable
@@ -112,7 +112,7 @@ useSeoMeta({
               </a-button>
             </div>
           </a-card>
-        </a>
+        </NuxtLink>
       </template>
 
       <!-- 没有文章时显示的卡片 -->
