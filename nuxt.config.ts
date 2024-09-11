@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "nuxt-schema-org",
-    "@nuxtjs/sitemap",
+    // "@nuxtjs/sitemap",
   ],
   // 应用配置
   app: {
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
         },
         { name: "theme-color", content: "#fff" },
       ],
-      link: [{ rel: "manifest", href: "/manifest.json" }],
+      // link: [{ rel: "manifest", href: "/manifest.json" }],
       script: [],
     },
   },
@@ -66,18 +66,18 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
   // 地图配置
-  sitemap: {
-    defaultSitemapsChunkSize: 5000,
-    sitemaps: true,
-    xsl: false,
-    // excludeAppSources: false,
-    // sources: ["/api/__sitemap__/urls"],
-    // autoI18n: false,
-    // autoLastmod: true,
-    // experimentalWarmUp: true,
-    // experimentalCompression: true,
-    // cacheMaxAgeSeconds: 86400,
-  },
+  // sitemap: {
+  //   defaultSitemapsChunkSize: 5000,
+  //   sitemaps: true,
+  //   xsl: false,
+  // excludeAppSources: false,
+  // sources: ["/api/__sitemap__/urls"],
+  // autoI18n: false,
+  // autoLastmod: true,
+  // experimentalWarmUp: true,
+  // experimentalCompression: true,
+  // cacheMaxAgeSeconds: 86400,
+  // },
   // MDC 配置
   mdc: {
     highlight: {
