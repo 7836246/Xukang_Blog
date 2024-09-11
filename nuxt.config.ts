@@ -40,7 +40,7 @@ export default defineNuxtConfig({
         },
         { name: "theme-color", content: "#fff" },
       ],
-      link: [{ rel: "manifest", href: "/manifest.json" }],
+      // link: [{ rel: "manifest", href: "/manifest.json" }],
       script: [],
     },
   },
@@ -67,9 +67,9 @@ export default defineNuxtConfig({
   },
   // 地图配置
   sitemap: {
-    // defaultSitemapsChunkSize: 5000,
-    // sitemaps: true,
-    // xsl: false,
+    defaultSitemapsChunkSize: 5000,
+    sitemaps: true,
+    xsl: false,
     // excludeAppSources: false,
     // sources: ["/api/__sitemap__/urls"],
     // autoI18n: false,
