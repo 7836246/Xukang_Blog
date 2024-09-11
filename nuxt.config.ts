@@ -67,12 +67,12 @@ export default defineNuxtConfig({
   },
   // 地图配置
   sitemap: {
-    defaultSitemapsChunkSize: 5000,
-    sitemaps: true,
-    xsl: false,
+    // defaultSitemapsChunkSize: 5000,
+    // sitemaps: true,
+    // xsl: false,
     // excludeAppSources: false,
     // sources: ["/api/__sitemap__/urls"],
-    autoI18n: false,
+    // autoI18n: false,
     // autoLastmod: true,
     // experimentalWarmUp: true,
     // experimentalCompression: true,
