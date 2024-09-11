@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "@nuxtjs/mdc",
     "@nuxt/icon",
+    "@nuxt/image",
   ],
   // 应用配置
   app: {},
