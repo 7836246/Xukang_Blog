@@ -270,10 +270,10 @@ export default defineNuxtConfig({
     //  禁用 Vue3 兼容性
     externalVue: false,
   },
-  // @ts-ignore 设置压缩
-  meta: {
+  // unhead 配置
+  unhead: {
+    // 启用 Html 压缩
     renderSSRHeadOptions: {
-      // typeof RenderSSRHeadOptions @unhead/schema
       omitLineBreaks: true,
     },
   },
