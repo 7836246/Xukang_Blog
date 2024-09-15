@@ -18,7 +18,6 @@
       <!-- 右侧社交链接 -->
       <div class="text-sm text-center lg:text-right">
         <p>当前状态: 随时到岗</p>
-        <p>期望薪资: 8k-14k</p>
       </div>
     </section>
 

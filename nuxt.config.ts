@@ -30,12 +30,23 @@ export default defineNuxtConfig({
   // 应用配置
   app: {
     head: {
+      htmlAttrs: {
+        lang: "zh-CN", // 设置语言为简体中文
+      },
       charset: "utf-8",
       meta: [
         {
           name: "viewport",
           content:
             "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+        },
+        {
+          name: "accessible",
+          content: "true",
+        },
+        {
+          name: "format-detection",
+          content: "telephone=no",
         },
         { name: "theme-color", content: "#fff" },
       ],
