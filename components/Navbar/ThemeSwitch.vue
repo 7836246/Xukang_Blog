@@ -4,6 +4,7 @@
     <template v-if="isClient">
       <a-tooltip :content="tooltipContent">
         <a-button
+          :title="tooltipContent"
           class="transition-transform transform hover:scale-110 active:scale-95 dark:bg-neutral-800 dark:text-white"
           shape="circle"
           size="large"
@@ -21,6 +22,7 @@
         class="transition-transform transform hover:scale-110 active:scale-95 dark:bg-neutral-800 dark:text-white"
         shape="circle"
         size="large"
+        title="切换主题"
       >
         <!-- 简单占位图标，可以使用一个常规的图标或文字占位 -->
         <component :is="LucideMonitor" class="icon-style" />
