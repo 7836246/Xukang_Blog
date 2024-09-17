@@ -3,4 +3,5 @@ export default interface workListInterface {
   description: string;
   // icon: string;
   link?: string;
+  stars: number; // 添加 stars 字段
 }

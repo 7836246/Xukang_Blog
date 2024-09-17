@@ -4,8 +4,12 @@
     <section
       class="flex flex-col lg:flex-row justify-between items-center py-3"
     >
+      <!-- 左侧文字描述 -->
+      <div class="text-sm text-center lg:text-left lg:w-1/3">
+        <p>邮箱: go7836246@gmail.com</p>
+      </div>
       <!-- 中间名字 -->
-      <div class="text-center text-4xl font-bold lg:text-5xl">
+      <div class="text-center text-2xl font-bold lg:text-3xl">
         徐康
         <span class="block text-lg">(Big)</span>
       </div>

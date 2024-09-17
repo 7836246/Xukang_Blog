@@ -28,6 +28,12 @@
       <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 mb-0 description">
         {{ workData.description }}
       </p>
+      <!-- GitHub Star 数量 -->
+      <div
+        class="mt-3 text-gray-500 dark:text-gray-400 text-sm flex items-center"
+      >
+        <span class="mr-2">⭐️ {{ workData.stars }} Stars</span>
+      </div>
     </a-card>
   </div>
 </template>
@@ -98,5 +104,13 @@ a:hover {
   overflow: hidden; /* 超出部分隐藏 */
   text-overflow: ellipsis; /* 显示省略号 */
   max-height: 3em; /* 两行的最大高度 */
+}
+
+/* Stars 数量的显示样式 */
+.star-count {
+  color: #f39c12; /* 星星的颜色 */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 </style>
