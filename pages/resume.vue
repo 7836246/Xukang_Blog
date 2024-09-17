@@ -6,8 +6,11 @@
     >
       <!-- 左侧联系方式 -->
       <div class="text-sm text-center lg:text-left">
+        <p>邮箱: <a href="mailto:7836246@qq.com">7836246@qq.com</a></p>
+        <p>微信: xukang2021n</p>
         <p>
-          邮箱: <a href="mailto:go7836246@gmail.com<">go7836246@gmail.com</a>
+          个人网站:
+          <a href="http://www.xukangr.com" target="_blank">www.xukangr.com</a>
         </p>
       </div>
       <!-- 中间名字 -->
@@ -18,6 +21,8 @@
       <!-- 右侧社交链接 -->
       <div class="text-sm text-center lg:text-right">
         <p>当前状态: 随时到岗</p>
+        <p>电话: 15179258737</p>
+        <p>求职意向: 全栈工程师</p>
       </div>
     </section>
 
@@ -25,13 +30,24 @@
     <section>
       <h2 class="text-lg font-bold border-b pb-2">专业技能</h2>
       <ul class="list-disc pl-5">
-        <li>熟练使用 Golang, JavaScript, TypeScript 和 SQL 进行开发</li>
         <li>
-          掌握 Vue3 和 Nuxt3 前端框架，熟悉 Naive UI 和 Tailwind CSS 等工具
+          精通 Golang，擅长并发编程、Goroutines、高性能数据结构及 GMP
+          调度模型优化
         </li>
-        <li>擅长 MySQL 和 Redis 数据库的设计与优化，熟悉 MongoDB</li>
-        <li>熟练使用 Docker 容器化技术和 Git 版本控制</li>
-        <li>具备微服务架构和消息队列（如 Kafka）的应用经验</li>
+        <li>
+          具备 Nuxt 3 前端开发经验，熟悉 Composition API 和 Uno CSS 等工具
+        </li>
+        <li>
+          深入理解 MySQL 优化，熟悉索引优化、查询优化和事务管理；熟悉使用 Redis
+          进行缓存和分布式锁操作
+        </li>
+        <li>
+          精通 Linux 系统管理和 Docker 容器化部署，具备 Git
+          版本控制的团队协作能力
+        </li>
+        <li>
+          擅长微服务架构设计和高并发系统优化，具备分布式缓存和异步编程的实践经验
+        </li>
       </ul>
     </section>
 
@@ -39,14 +55,37 @@
     <section>
       <h2 class="text-lg font-bold border-b pb-2">工作经验</h2>
       <div class="mt-4">
+        <h3 class="text-base font-semibold">后端开发 - 技术部</h3>
+        <p class="text-sm">
+          深圳市禾葡兰化妆品有限公司 | 2024年03月 - 2024年05月
+        </p>
+        <ul class="list-disc pl-5 mt-2">
+          <li>
+            负责 CRM 系统中销售单转物流单模块的设计与实现，优化订单处理流程
+          </li>
+          <li>
+            使用 Golang 开发高效 RESTful API，实现订单状态实时跟踪和异步处理
+          </li>
+          <li>
+            完成 PHP 到 Go 的模块迁移，重构 MySQL
+            存储过程，大幅提升数据库性能和稳定性
+          </li>
+          <li>
+            参与禾粉圈小程序用户体系的升级，优化用户分层、积分管理和成长值计算逻辑
+          </li>
+        </ul>
+      </div>
+      <div class="mt-4">
         <h3 class="text-base font-semibold">Go开发工程师 - 开发部</h3>
         <p class="text-sm">
           安徽阜南县奇灵信息科技公司 | 2022年10月 - 2024年02月
         </p>
         <ul class="list-disc pl-5 mt-2">
-          <li>负责文库系统的前端开发，优化用户体验和 SEO</li>
-          <li>设计并优化 MySQL 数据库和 Redis 缓存策略，提高系统响应速度</li>
-          <li>使用 Go 语言实现高性能后端服务，管理文档、分类、标签和权限</li>
+          <li>
+            负责知识文库系统的后端开发，优化数据结构和缓存策略，提高系统性能
+          </li>
+          <li>设计高性能 RESTful API 接口，管理文档、分类、标签和权限</li>
+          <li>使用 Nuxt 3（SSR）开发用户界面，提升页面加载速度和 SEO 效果</li>
         </ul>
       </div>
       <div class="mt-4">
@@ -66,12 +105,17 @@
     <section>
       <h2 class="text-lg font-bold border-b pb-2">项目经验</h2>
       <div class="mt-4">
-        <h3 class="text-base font-semibold">个人博客系统开发</h3>
-        <p class="text-sm">2024年01月 - 2024年02月</p>
+        <h3 class="text-base font-semibold">Whois 和 DNS 批量查询工具</h3>
+        <p class="text-sm">2024年06月 - 2024年08月</p>
         <ul class="list-disc pl-5 mt-2">
-          <li>使用 Golang 和 Nuxt3 开发博客平台，实现前后端分离架构</li>
-          <li>实现 JWT 和 Casbin 的权限管理系统，保障数据安全</li>
-          <li>采用 SSR 和静态文件缓存策略，优化 SEO 和页面加载速度</li>
+          <li>基于 Nuxt 3 开发前端界面，提供直观的 Whois 和 DNS 查询体验</li>
+          <li>
+            使用 Golang
+            后端处理高并发批量查询，实现请求限速、防抖和异步任务队列调度
+          </li>
+          <li>
+            结合 Nuxt 3 的 Nitro 中间层和 Redis 缓存，优化查询性能和系统资源使用
+          </li>
         </ul>
       </div>
     </section>
