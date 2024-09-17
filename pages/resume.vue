@@ -4,10 +4,6 @@
     <section
       class="flex flex-col lg:flex-row justify-between items-center py-3"
     >
-      <!-- 左侧联系方式 -->
-      <div class="text-sm text-center lg:text-left">
-        <p>邮箱: <a href="mailto:7836246@qq.com">7836246@qq.com</a></p>
-      </div>
       <!-- 中间名字 -->
       <div class="text-center text-4xl font-bold lg:text-5xl">
         徐康
@@ -16,7 +12,6 @@
       <!-- 右侧社交链接 -->
       <div class="text-sm text-center lg:text-right">
         <p>当前状态: 随时到岗</p>
-        <p>求职意向: 全栈工程师</p>
       </div>
     </section>
 
