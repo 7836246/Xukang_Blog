@@ -96,14 +96,15 @@ a:hover {
   transition: all 0.3s ease;
 }
 
-/* 描述文本，限制为两行 */
+/* 描述文本，限制为三行 */
 .description {
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* 限制为两行 */
+  -webkit-line-clamp: 3; /* 限制为三行 */
   -webkit-box-orient: vertical;
   overflow: hidden; /* 超出部分隐藏 */
   text-overflow: ellipsis; /* 显示省略号 */
-  max-height: 3em; /* 两行的最大高度 */
+  max-height: 4.5em; /* 三行的最大高度 */
+  min-height: 4.5em; /* 设置描述区域的最小高度为三行 */
 }
 
 /* Stars 数量的显示样式 */
