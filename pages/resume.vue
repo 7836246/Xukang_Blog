@@ -7,11 +7,6 @@
       <!-- 左侧联系方式 -->
       <div class="text-sm text-center lg:text-left">
         <p>邮箱: <a href="mailto:7836246@qq.com">7836246@qq.com</a></p>
-        <p>微信: xukang2021n</p>
-        <p>
-          个人网站:
-          <a href="http://www.xukangr.com" target="_blank">www.xukangr.com</a>
-        </p>
       </div>
       <!-- 中间名字 -->
       <div class="text-center text-4xl font-bold lg:text-5xl">
@@ -21,7 +16,6 @@
       <!-- 右侧社交链接 -->
       <div class="text-sm text-center lg:text-right">
         <p>当前状态: 随时到岗</p>
-        <p>电话: 15179258737</p>
         <p>求职意向: 全栈工程师</p>
       </div>
     </section>
