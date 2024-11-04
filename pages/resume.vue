@@ -6,7 +6,7 @@
     >
       <!-- 左侧文字描述 -->
       <div class="text-sm text-center lg:text-left lg:w-1/3">
-        <p>邮箱: go7836246@gmail.com</p>
+        <p>邮箱: 7836246@qq.com</p>
       </div>
       <!-- 中间名字 -->
       <div class="text-center text-2xl font-bold lg:text-3xl">
